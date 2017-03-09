@@ -1,0 +1,45 @@
+<table class="table table-boldered">
+    <thead>
+        <tr>
+            <td>
+                商品名称
+            </td>
+
+            <td>
+                商品描述
+            </td>
+            <td>
+                库存
+            </td>
+            <td>
+                价格（RMB）
+            </td>
+            <td>
+                管理选项
+            </td>
+            <td>
+                创建时间
+            </td>
+        </tr>
+    </thead>
+
+    <% @products.each do |product| %>
+    <tr>
+
+        <td> <%= product.title %> </td>
+        <td> <%= product.description %> </td>
+        <td> <%= product.quantity %> </td>
+        <td> <%= product.price %> </td>
+
+        <td>
+            <%= link_to("Edit", "#") %>
+            |
+            <%= link_to("Destroy", "#", :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+
+        </td>
+        <td>
+            <%= product.created_at %>
+        </td>
+    </tr>
+    <% end %>
+</table>
