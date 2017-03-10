@@ -2,5 +2,13 @@
 
 <p>
   <%= simple_format(@product.description) %>
+  <%= @product.quantity %>
+  <%= @product.price %>
+
+  <% if @product.image.present? %>
+    <span>商品图</span> <br>
+    <%= image_tag(@product.image.thumb.url) %>
+  <% end %>
+
 
 </p>
