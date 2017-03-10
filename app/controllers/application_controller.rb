@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def admin_required
     if !current_user.admin?
-      redirect_to "/"
+      redirect_to "/", alert: "没有管理员权限"
 
     end
 
