@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   end
 
+resources :carts
   root 'products#index'
   resources :products do
     member do
